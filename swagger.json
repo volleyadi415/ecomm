@@ -1,0 +1,56 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Ecommerce",
+      "description": "",
+      "version": "0.1.9"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5001/",
+        "description": "server 1"
+      }
+    ],
+    "paths": {
+      "/login": {
+        "post": {
+          "tags": [
+            "user"
+          ],
+          "summary": "Login user",
+          "description": "Login page",
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/definitions/login",
+                  "properties": {
+                    "user_email": {
+                      "description": "",
+                      "type": "string"
+                    },
+                    "password": {
+                      "description": "",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "successful"
+            },
+            "403": {
+              "description": "Header missing"
+            },
+            "404": {
+              "description": "version not found"
+            }
+          }
+        }
+      }
+    }
+}
