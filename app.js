@@ -1,4 +1,4 @@
-const PORT = 5001;                       
+const PORT = 5000;                       
 const express =require("express");
 const router = require("./routes/router");
 const app = express();

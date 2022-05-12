@@ -12,9 +12,9 @@ const { createToken } = require("../helpers/jwt");
 class Login {
     static async login(req, res) {
 
-        const { email, password } = req.body;
+        const { useremail, password } = req.body;
 
-        const result = await execute(`SELECT * FROM users WHERE email='${email}'`)
+        const result = await execute(`SELECT * FROM users WHERE useremail='${useremail}'`)
 
 
         if (result.rowCount == 0) {
@@ -36,8 +36,8 @@ class Login {
 
         }
         else {
-            await execute(`SELECT * FROM users where email='${email}' and Password='${password}'`)
-            const data = {email,password};
+            await execute(`SELECT * FROM users where useremail='${useremail}' and Password='${password}'`)
+            const data = {useremail,password};
                 const token =  createToken(data);
 
             res.status(200).json({
