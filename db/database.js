@@ -4,7 +4,7 @@ const pool = new Pool({
     password: '123456',
     database: 'ecommercedb',
     host: 'localhost',
-    port: '5000',
+    port: '5432',
     min_pool_size: '5',
   reserve_pool_size: '5',
   server_idle_timeout: '300',
